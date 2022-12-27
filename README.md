@@ -1,4 +1,6 @@
 # Wireless-Stereo-Cam
+THIS PROJECT IS TEMPARAILY ON HOLD. THE ESP32 CAMS OVERHEATED AND THE CAMERAS ARE NO LONGER RESPONDING.
+
 A stero cam for 3D reconstruction using two wireless ESP32 OV2640 cam modules. These modules were chosen due to the much lower price compared to dual camera modules.
 
 
