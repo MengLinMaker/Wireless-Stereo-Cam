@@ -46,6 +46,23 @@ face_recognize  - Face recognition; 1 = enabled, only settable if Face detection
 ```
 
 
+### Frame size
+```
+ 0 - THUMB (96x96)
+ 1 - QQVGA (160x120)
+ 3 - HQVGA (240x176)
+ 5 - QVGA (320x240)
+ 6 - CIF (400x296)
+ 7 - HVGA (480x320)
+ 8 - VGA (640x480)
+ 9 - SVGA (800x600)
+10 - XGA (1024x768)
+11 - HD (1280x720)
+12 - SXGA (1280x1024)
+13 - UXGA (1600x1200)
+```
+
+
 
 ## Credits
 This project could not be completed without the help of these sources:
