@@ -9,7 +9,9 @@ These APIs use HTTP GET requests at `http://<IP_ADDRESS>/`.
 #### Port 80
 * `/` - Controller html page (disabled by default)
 * `/capture` - Get JPG snapshot
-* `/status` - Get setting values
+* `/status` - Get setting values in JSON format
+  * Example return data:
+ `{"lamp":0,"autolamp":0,"min_frame_time":0,"framesize":9,"quality":10,"xclk":8,"brightness":0,"contrast":0,"saturation":0,"sharpness":0,"special_effect":0,"wb_mode":0,"awb":1,"awb_gain":1,"aec":1,"aec2":0,"ae_level":0,"aec_value":204,"agc":1,"agc_gain":0,"gainceiling":0,"bpc":0,"wpc":1,"raw_gma":1,"lenc":1,"vflip":1,"hmirror":1,"dcw":1,"colorbar":0,"cam_name":"ESP32 test camera","code_ver":"Mar 10 2022 @ 14:00:45","rotate":"0","stream_url":"http://10.0.0.181:81/"}`
 * `/control?var=<SETTING_NAME>&val=<NEW_VALUE>` - Set `SETTING_NAME` to `NEW_VALUE`. Refer to `/status`
 
 #### Port 81
