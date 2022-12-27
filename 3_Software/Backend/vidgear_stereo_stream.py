@@ -1,6 +1,7 @@
 import cv2
 import requests
 import time
+from vidgear.gears import CamGear
 
 
 
@@ -14,9 +15,7 @@ def setControl(url:str, var:str, val:str):
 
 
 def requestStream(camUrl):
-  videoStream = cv2.VideoCapture(camUrl + ":81/stream")
-  videoStream.set(cv2.CAP_PROP_BUFFERSIZE, 0)
-  #videoStream.set(cv2.CAP_PROP_FPS, 10)
+  videoStream = CamGear(source = f"{camUrl}:81/stream").start()
   return videoStream
 
 
@@ -27,6 +26,8 @@ if __name__ == '__main__':
 
   rightCamResponse = requestStream(rightCamUrl)
   leftCamResponse = requestStream(leftCamUrl)
+  #rightCamResponse = CamGear(0).start()
+
 
   frameSize = 1
   setControl(rightCamUrl, "framesize", f"{frameSize}")
@@ -37,19 +38,16 @@ if __name__ == '__main__':
   setControl(leftCamUrl, "xclk", f"{xclk}")
 
   while True:
-    time.sleep(0.1)
-    if rightCamResponse.isOpened():
-      dummy, rightFrame = rightCamResponse.read()
-      cv2.imshow("Right Camera", rightFrame)
+    rightFrame = rightCamResponse.read()
+    cv2.imshow("Right Camera", rightFrame)
 
-    if leftCamResponse.isOpened():
-      dummy, leftFrame = leftCamResponse.read()
-      cv2.imshow("Left Camera", leftFrame)
+    leftFrame = leftCamResponse.read()
+    cv2.imshow("Left Camera", leftFrame)
 
     if cv2.waitKey(1) == 27:
       break
 
   cv2.destroyAllWindows()
 
-  rightCamResponse.release()
-  leftCamResponse.release()
+  rightCamResponse.stop()
+  leftCamResponse.stop()

@@ -19,6 +19,9 @@
 
 
 
+// Declare if index page is needed
+#define INCLUDE_INDEX_HTML
+
 // Define HTTP headers
 #define PART_BOUNDARY "123456789000000000000987654321"
 static const char *_STREAM_CONTENT_TYPE = "multipart/x-mixed-replace;boundary=" PART_BOUNDARY;

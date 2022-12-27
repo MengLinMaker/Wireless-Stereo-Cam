@@ -19,10 +19,6 @@
 const char* ssid = WIFI_SSID;
 const char* password = WIFI_PASSWORD;
 
-// Declare if index page is needed
-// #define INCLUDE_INDEX_HTML
-
-
 
 
 // Declare function before use
